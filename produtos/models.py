@@ -1,6 +1,15 @@
+from cProfile import label
+from logging import PlaceHolder
 from pyexpat import model
 from django.db import models
 
+TIPO_CHOICES = (
+    ("-----","-----"),
+    ("Ração",'Ração'),
+    ("Remédio", "Remédio"),
+    ("Ferramenta", "Ferramenta"),
+    ("Outro","Outro"),
+)
 
 class Produto(models.Model):
     descricao = models.CharField("Descrição", max_length=200, null=True)
@@ -9,6 +18,7 @@ class Produto(models.Model):
     fornecedor = models.CharField("Fornecedor", max_length=100, null=True)
     quantidade = models.SmallIntegerField("Quantidade", null=True)
     peso = models.SmallIntegerField("Peso", null=True)
+    tipo = models.CharField('Tipo', choices=TIPO_CHOICES, max_length=15, default="-----")
 
 class Fornecedor(models.Model):
     nome = models.CharField("Nome", max_length=100)

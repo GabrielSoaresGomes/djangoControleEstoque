@@ -2,5 +2,38 @@
 
 {% block content %}
 {% csrf_token %}
-{{ produtoForm }}
+<div class="formContainerAll">
+    <form action="" method="post">
+        {% csrf_token %}
+    <div class="formContainer">
+        <label for="descricao">Descrição</label>
+        {{ produtoForm.descricao }}
+    </div>
+    
+    <div class="formContainer">
+        <label for="custo">Custo</label>
+        {{ produtoForm.custo }}
+    </div>
+    <div class="formContainer">
+        <label for="preco">Preço</label>
+        {{ produtoForm.preco }}
+    </div>
+    <div class="formContainer">
+        <label for="fornecedor">Fornecedor</label>
+        {{ produtoForm.fornecedor }}
+    </div>
+    <div class="formContainer">
+        <label for="quantidade">Quantidade</label>
+        {{ produtoForm.quantidade }}
+    </div>
+    <div class="formContainer">
+        <label for="peso">Peso</label>
+        {{ produtoForm.peso }}
+    </div>
+    <div class="formContainer inputSubmit">
+        <input type="submit" value="Cadastrar">
+    </div>
+</form>
+</div>
+
 {% endblock content %}

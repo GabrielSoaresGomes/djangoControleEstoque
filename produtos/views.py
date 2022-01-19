@@ -7,8 +7,8 @@ def produtosList(request):
     return render(request, 'listaProdutos.html', {'produtos': produtos})
 
 def adicionarProdutos(request):
-    produtoForm = ProdutoForm
-    if produtoForm.is_valid:
-        produtoForm.save()
+    form = ProdutoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
         return redirect('produtosList')
-    return render(request, "estadioForm.html", {"produtoForm": produtoForm})
+    return render(request, "adicionarProduto.html", {"produtoForm": form})

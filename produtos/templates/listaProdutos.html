@@ -3,6 +3,23 @@
 
 {% block content %}
 
+<div class='todosProdutos'>
 
 
+{% for produto in produtos %}
+
+<div class='produto'>
+{{ produto.descricao }}
+{{ produto.peso }}KG
+{{ produto.fornecedor }}
+{{ produto.tipo }}
+R${{ produto.custo }}
+R${{ produto.preco }}
+{{ produto.quantidade }}un
+</div>
+
+
+{% endfor %}
+
+</div>
 {% endblock content %}

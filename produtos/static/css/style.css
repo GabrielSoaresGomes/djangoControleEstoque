@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.formContainerAll {
+    display: inline-block;
+    margin: 10px 30% 0 30%;
+}
+
+div.formContainer {
+    text-align: right;
+    grid-template-columns: 100px 300px;
+    display: grid;
+    margin: 20px 0;
+}
+
+div.formContainer label {
+    text-align: right;
+    margin-right: 4px;
+}
+
+div.inputSubmit input {
+    grid-column-start: 1;
+    grid-column-end: 3 ;
+}
