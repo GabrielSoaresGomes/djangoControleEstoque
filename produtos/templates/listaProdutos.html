@@ -5,21 +5,38 @@
 
 <div class='todosProdutos'>
 
-
-{% for produto in produtos %}
-
 <div class='produto'>
-{{ produto.descricao }}
-{{ produto.peso }}KG
-{{ produto.fornecedor }}
-{{ produto.tipo }}
-R${{ produto.custo }}
-R${{ produto.preco }}
-{{ produto.quantidade }}un
+    <table id="tableProdutos">
+        <thead>
+            <tr>
+                <td>PRODUTO</td>
+                <td>PESO</td>
+                <td>FORNECEDOR</td>
+                <td>TIPO</td>
+                <td>CUSTO</td>
+                <td>PREÇO</td>
+                <td>QUANTIDADE</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td><a href="{% url 'atualizarProdutos' produto.id %}">{{ produto.descricao }}</a></td>
+                <td>{{ produto.peso }}KG</td>
+                <td>{{ produto.fornecedor }}</td>
+                <td>{{ produto.tipo }}</td>
+                <td>R${{ produto.custo }}</td>
+                <td>R${{ produto.preco }}</td>
+                <td>{{ produto.quantidade }}un</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
-
-
-{% endfor %}
-
 </div>
+<script>
+    $(document).ready( function () {
+    $('#tableProdutos').DataTable();
+} );
+</script>
 {% endblock content %}
