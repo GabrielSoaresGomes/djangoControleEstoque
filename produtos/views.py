@@ -12,3 +12,11 @@ def adicionarProdutos(request):
         form.save()
         return redirect('produtosList')
     return render(request, "adicionarProduto.html", {"produtoForm": form})
+
+def atualizarProdutos(request, id):
+    produto = Produto.objects.get(id=id)
+    produtoForm = ProdutoForm(request.POST or None, instance=produto)
+    if produtoForm.is_valid():
+        produtoForm.save()
+        return redirect('produtosList')
+    return render(request, "adicionarProduto.html", {"produtoForm": produtoForm, "produto": produto})
