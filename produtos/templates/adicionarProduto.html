@@ -30,6 +30,24 @@
         <label for="peso">Peso</label>
         {{ produtoForm.peso }}
     </div>
+
+    <div class="formContainer">
+        <label for="tipo">Tipo do Produto</label>
+        {{ produtoForm.tipo }}
+    </div>
+
+    <div class="formContainer">
+        <label>Tem a varejo?</label>
+        <div class="divBtnVarejo">
+            <button type="button">SIM</button>
+            <button type="button">NÃO</button>
+        </div>
+    </div>
+
+    <div class="formContainer hidden">
+        <label for="temVarejo">Tem à varejo?</label>
+        {{ produtoForm.temVarejo }}
+    </div>
     <div class="formContainer inputSubmit">
         <input type="submit" value="Cadastrar">
     </div>
