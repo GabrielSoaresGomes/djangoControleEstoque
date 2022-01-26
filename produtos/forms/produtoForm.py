@@ -8,4 +8,4 @@ from django import forms
 class ProdutoForm(ModelForm):
     class Meta:
         model = Produto
-        fields = ['descricao', 'custo', 'preco', 'fornecedor', 'quantidade', 'peso']
+        fields = ['descricao', 'custo', 'preco', 'fornecedor', 'quantidade', 'peso','tipo',"temVarejo"]

@@ -1,6 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
+}
+
+.btnGreen {
+    background-color: green;
+}
+
+.btnRed {
+    background-color: red;
+}
+
+.hidden , .hidden * {
+    display: none;
 }
 
 div.formContainerAll {
@@ -20,7 +35,53 @@ div.formContainer label {
     margin-right: 4px;
 }
 
+div.formContainer .divBtnVarejo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.formContainer .divBtnVarejo button {
+    height: 75%;
+    margin: 0 4px;
+    width: 40%;
+}
+
 div.inputSubmit input {
     grid-column-start: 1;
     grid-column-end: 3 ;
+}
+
+.produto {
+    margin: auto;
+    width: 1200px !important;
+}
+
+.produto * {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+#tableProdutos_filter, #tableProdutos_length {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table#tableProdutos {
+    border-collapse: collapse;
+
+}
+
+table#tableProdutos td {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+table#tableProdutos th {
+    border: 2px solid black;
+}
+
+table#tableProdutos a {
+    text-decoration: None;
 }
